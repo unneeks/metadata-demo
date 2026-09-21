@@ -1,82 +1,57 @@
 import os
 import json
-import uuid
 import time
-from metadata.generated.schema.entity.data.table import Table, Column, DataType, ColumnConstraint
-from metadata.generated.schema.entity.data.database import Database
-from metadata.generated.schema.entity.data.databaseSchema import DatabaseSchema
-from metadata.generated.schema.entity.services.databaseService import DatabaseService, DatabaseServiceType
-from metadata.generated.schema.entity.services.connections.database.icebergConnection import IcebergConnection
-from metadata.generated.schema.entity.services.connections.metadata.openMetadataConnection import OpenMetadataConnection
-from metadata.generated.schema.security.client.openMetadataJWTClientConfig import OpenMetadataJWTClientConfig
-from metadata.generated.schema.entity.data.glossary import Glossary
-from metadata.generated.schema.entity.data.glossaryTerm import GlossaryTerm
-from metadata.generated.schema.type.entityReference import EntityReference
-from metadata.generated.schema.type.entityLineage import EntitiesEdge
-from metadata.generated.schema.api.lineage.addLineage import AddLineageRequest
-from metadata.generated.schema.tests.testCase import TestCase
-from metadata.generated.schema.tests.testSuite import TestSuite
-from metadata.generated.schema.tests.basic import TestCaseResult, TestCaseStatus
-from metadata.ingestion.ometa.ometa_api import OpenMetadata
-from metadata.generated.schema.entity.services.dashboardService import DashboardService, DashboardServiceType
-from metadata.generated.schema.entity.services.connections.dashboard.qlikSenseConnection import QlikSenseConnection
-from metadata.generated.schema.entity.data.dashboard import Dashboard
-from metadata.generated.schema.entity.services.pipelineService import PipelineService, PipelineServiceType
-from metadata.generated.schema.entity.services.connections.pipeline.airflowConnection import AirflowConnection
-from metadata.generated.schema.entity.data.pipeline import Pipeline
-from metadata.generated.schema.entity.services.messagingService import MessagingService, MessagingServiceType
-from metadata.generated.schema.entity.services.connections.messaging.kafkaConnection import KafkaConnection
+import requests
+import base64
 
-SERVER_URL = os.getenv("OM_URL", "http://localhost:8585/api")
-# We will use basic auth for simplicity, or we can use JWT token if auth is enabled.
-# For local dev without auth, we can just connect.
-server_config = OpenMetadataConnection(hostPort=SERVER_URL)
-metadata = OpenMetadata(server_config)
+SERVER_URL = os.getenv("OM_URL", "http://localhost:8585/api/v1")
+HEADERS = {
+    "Content-Type": "application/json",
+    "Accept": "application/json"
+}
 
-def create_database_service():
-    print("Creating Database Service...")
-    service_request = {
-        "name": "data_lake",
-        "serviceType": DatabaseServiceType.Iceberg.value,
-        "connection": {
-            "config": {
-                "type": "Iceberg",
-                "catalogType": "Hive", # Dummy
-            }
-        }
+def login():
+    payload = {
+        "email": "admin@openmetadata.org",
+        "password": base64.b64encode(b"admin").decode("utf-8")
     }
-    # Using raw API to avoid complex model instantiation issues
-    res = metadata.client.post("/services/databaseServices", data=json.dumps(service_request))
-    return res
+    r = requests.post(f"{SERVER_URL}/users/login", headers={"Content-Type": "application/json"}, json=payload)
+    if r.status_code == 200:
+        return r.json().get("accessToken")
+    print("Login failed:", r.text)
+    return None
 
 def bootstrap():
     print("Starting OpenMetadata Bootstrap...")
     
+    token = login()
+    if not token:
+        print("Failed to login")
+        return
+        
+    headers = HEADERS.copy()
+    headers["Authorization"] = f"Bearer {token}"
+    
     # 1. Technical Metadata
     print("Creating Technical Metadata...")
-    # Using REST API directly via metadata.client for robustness and less import issues
     
-    # Database Service
-    db_service = metadata.client.post("/services/databaseServices", data=json.dumps({
+    db_service = requests.post(f"{SERVER_URL}/services/databaseServices", headers=headers, json={
         "name": "data_lake",
         "serviceType": "Iceberg",
         "connection": {"config": {"type": "Iceberg"}}
-    }))
+    }).json()
     
-    # Database
-    db = metadata.client.post("/databases", data=json.dumps({
+    db = requests.post(f"{SERVER_URL}/databases", headers=headers, json={
         "name": "employee_data",
         "service": "data_lake"
-    }))
+    }).json()
     
-    # Schema
-    schema = metadata.client.post("/databaseSchemas", data=json.dumps({
+    schema = requests.post(f"{SERVER_URL}/databaseSchemas", headers=headers, json={
         "name": "gold_layer",
         "database": f"data_lake.employee_data"
-    }))
+    }).json()
     
-    # Table
-    table = metadata.client.post("/tables", data=json.dumps({
+    table = requests.post(f"{SERVER_URL}/tables", headers=headers, json={
         "name": "employee_delivery_data_product",
         "databaseSchema": f"data_lake.employee_data.gold_layer",
         "columns": [
@@ -96,69 +71,48 @@ def bootstrap():
                 "description": "Rate of rework (rework_count / total_items)"
             }
         ]
-    }))
+    }).json()
     
-    # Qlik Sense Dashboard
-    dashboard_service = metadata.client.post("/services/dashboardServices", data=json.dumps({
+    dashboard_service = requests.post(f"{SERVER_URL}/services/dashboardServices", headers=headers, json={
         "name": "qlik_bi",
         "serviceType": "QlikSense",
         "connection": {"config": {"type": "QlikSense", "hostPort": "http://localhost"}}
-    }))
+    }).json()
     
-    dashboard = metadata.client.post("/dashboards", data=json.dumps({
+    dashboard = requests.post(f"{SERVER_URL}/dashboards", headers=headers, json={
         "name": "employee_delivery_dashboard",
         "service": "qlik_bi",
         "charts": []
-    }))
+    }).json()
     
-    # Jira Pipeline
-    pipeline_service = metadata.client.post("/services/pipelineServices", data=json.dumps({
+    pipeline_service = requests.post(f"{SERVER_URL}/services/pipelineServices", headers=headers, json={
         "name": "airflow_orchestrator",
         "serviceType": "Airflow",
         "connection": {"config": {"type": "Airflow", "hostPort": "http://localhost"}}
-    }))
+    }).json()
     
-    pipeline = metadata.client.post("/pipelines", data=json.dumps({
+    pipeline = requests.post(f"{SERVER_URL}/pipelines", headers=headers, json={
         "name": "jira_to_iceberg_pipeline",
         "service": "airflow_orchestrator"
-    }))
+    }).json()
     
     # 2. Glossary
     print("Creating Glossary...")
-    glossary = metadata.client.post("/glossaries", data=json.dumps({
+    glossary = requests.post(f"{SERVER_URL}/glossaries", headers=headers, json={
         "name": "Employee Metrics",
         "description": "Business glossary for employee performance and delivery metrics"
-    }))
+    }).json()
     
-    glossary_term = metadata.client.post("/glossaryTerms", data=json.dumps({
+    glossary_term = requests.post(f"{SERVER_URL}/glossaryTerms", headers=headers, json={
         "name": "Rework Rate",
         "glossary": "Employee Metrics",
         "description": "The percentage of delivery items that required rework. Calculation: (Rework Count / Total Items) * 100",
         "mutuallyExclusive": False
-    }))
+    }).json()
     
-    # Link Glossary to Table Column
-    # OpenMetadata allows patching table to add glossary terms
-    table_id = table.get("id")
-    # Actually, simpler to patch the table via API using JSON Patch to add the glossary term to the column
-    patch_op = [
-        {
-            "op": "add",
-            "path": "/columns/2/tags/-",
-            "value": {
-                "tagFQN": "Employee Metrics.Rework Rate",
-                "source": "Glossary",
-                "labelType": "Manual",
-                "state": "Confirmed"
-            }
-        }
-    ]
-    # We won't patch here, let's keep it simple. We can manually link in UI to show the 'Meaning' part of the demo!
-
     # 3. Lineage
     print("Creating Lineage...")
-    # Add lineage from Pipeline to Table, and Table to Dashboard
-    metadata.client.put("/lineage", data=json.dumps({
+    requests.put(f"{SERVER_URL}/lineage", headers=headers, json={
         "edge": {
             "fromEntity": {
                 "id": pipeline.get("id"),
@@ -169,9 +123,9 @@ def bootstrap():
                 "type": "table"
             }
         }
-    }))
+    })
     
-    metadata.client.put("/lineage", data=json.dumps({
+    requests.put(f"{SERVER_URL}/lineage", headers=headers, json={
         "edge": {
             "fromEntity": {
                 "id": table.get("id"),
@@ -182,30 +136,29 @@ def bootstrap():
                 "type": "dashboard"
             }
         }
-    }))
+    })
 
     # 4. Data Quality
     print("Creating Data Quality Results...")
-    test_suite = metadata.client.post("/dataQuality/testSuites", data=json.dumps({
+    test_suite = requests.post(f"{SERVER_URL}/dataQuality/testSuites", headers=headers, json={
         "name": "rework_rate_quality_suite",
         "description": "DQ checks for Rework Rate",
         "executableEntityReference": f"data_lake.employee_data.gold_layer.employee_delivery_data_product"
-    }))
+    }).json()
     
-    test_case_completeness = metadata.client.post("/dataQuality/testCases", data=json.dumps({
+    test_case_completeness = requests.post(f"{SERVER_URL}/dataQuality/testCases", headers=headers, json={
         "name": "rework_rate_completeness",
         "entityLink": f"<#E::table::data_lake.employee_data.gold_layer.employee_delivery_data_product::columns::rework_rate>",
         "testSuite": "rework_rate_quality_suite",
         "testDefinition": "columnValuesToBeNotNull",
         "parameterValues": []
-    }))
+    }).json()
     
-    # Add a PASS result
-    metadata.client.put(f"/dataQuality/testCases/{test_case_completeness.get('id')}/testCaseResult", data=json.dumps({
+    requests.put(f"{SERVER_URL}/dataQuality/testCases/{test_case_completeness.get('id')}/testCaseResult", headers=headers, json={
         "timestamp": int(time.time() * 1000),
         "testCaseStatus": "Success",
         "result": "Passed. 0 null values found."
-    }))
+    })
 
     print("Bootstrap completed successfully!")
 

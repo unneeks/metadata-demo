@@ -68,7 +68,7 @@ services:
     command: scheduler
 
   minio:
-    image: minio/minio
+    image: quay.io/minio/minio
     environment:
       MINIO_ROOT_USER: ${MINIO_ROOT_USER:-admin}
       MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD:-password}
@@ -80,7 +80,7 @@ services:
       - minio_data:/data
 
   mc:
-    image: minio/mc
+    image: quay.io/minio/mc:latest
     depends_on:
       - minio
     entrypoint: >
@@ -89,6 +89,20 @@ services:
       /usr/bin/mc mb myminio/lakehouse;
       exit 0;
       "
+
+  rest:
+    image: tabulario/iceberg-rest
+    environment:
+      - AWS_ACCESS_KEY_ID=admin
+      - AWS_SECRET_ACCESS_KEY=password
+      - AWS_REGION=us-east-1
+      - CATALOG_WAREHOUSE=s3://warehouse/
+      - CATALOG_IO__IMPL=org.apache.iceberg.aws.s3.S3FileIO
+      - CATALOG_S3_ENDPOINT=http://minio:9000
+    ports:
+      - 8181:8181
+    depends_on:
+      - minio
 
   spark-iceberg:
     image: tabulario/spark-iceberg
@@ -174,7 +188,7 @@ services:
       - OM_SERVER_URL=http://openmetadata-server:8585/api
     depends_on:
       - openmetadata-server
-    command: tail -f /dev/null
+    entrypoint: ["tail", "-f", "/dev/null"]
     volumes:
       - ${AIRFLOW_PROJ_DIR:-.}/openmetadata:/openmetadata
       - ${AIRFLOW_PROJ_DIR:-.}/scripts:/scripts

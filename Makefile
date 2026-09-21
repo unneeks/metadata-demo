@@ -1,10 +1,10 @@
 .PHONY: setup generate start stop clean demo load-openmetadata run-pipeline run-dq prepare-qlik health
 
 setup:
-	pip install -r requirements.txt
+	python3 -m pip install -r requirements.txt
 
 generate:
-	python generators/generate_all.py --seed 42 --employees 1000 --months 12 --output ./src
+	python3 generators/generate_all.py --seed 42 --employees 1000 --months 12 --output ./src
 
 start:
 	docker-compose up -d

@@ -1,0 +1,144 @@
+[2026-09-21T17:35:29.305+0000] {processor.py:157} INFO - Started process (PID=169) to work on /opt/airflow/dags/employee_delivery_pipeline.py
+[2026-09-21T17:35:29.307+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/employee_delivery_pipeline.py for tasks to queue
+[2026-09-21T17:35:29.308+0000] {logging_mixin.py:154} INFO - [2026-09-21T17:35:29.307+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/employee_delivery_pipeline.py
+[2026-09-21T17:35:29.358+0000] {processor.py:839} INFO - DAG(s) dict_keys(['employee_delivery_pipeline']) retrieved from /opt/airflow/dags/employee_delivery_pipeline.py
+[2026-09-21T17:35:29.650+0000] {logging_mixin.py:154} INFO - [2026-09-21T17:35:29.650+0000] {manager.py:499} INFO - Created Permission View: %s
+[2026-09-21T17:35:29.660+0000] {logging_mixin.py:154} INFO - [2026-09-21T17:35:29.660+0000] {manager.py:499} INFO - Created Permission View: %s
+[2026-09-21T17:35:29.667+0000] {logging_mixin.py:154} INFO - [2026-09-21T17:35:29.667+0000] {manager.py:499} INFO - Created Permission View: %s
+[2026-09-21T17:35:29.668+0000] {logging_mixin.py:154} INFO - [2026-09-21T17:35:29.668+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2026-09-21T17:35:29.682+0000] {logging_mixin.py:154} INFO - [2026-09-21T17:35:29.681+0000] {dag.py:2963} INFO - Creating ORM DAG for employee_delivery_pipeline
+[2026-09-21T17:35:29.696+0000] {logging_mixin.py:154} INFO - [2026-09-21T17:35:29.696+0000] {dag.py:3722} INFO - Setting next_dagrun for employee_delivery_pipeline to 2026-09-20T00:00:00+00:00, run_after=2026-09-21T00:00:00+00:00
+[2026-09-21T17:35:29.751+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/employee_delivery_pipeline.py took 0.449 seconds
+[2026-09-21T17:35:59.994+0000] {processor.py:157} INFO - Started process (PID=174) to work on /opt/airflow/dags/employee_delivery_pipeline.py
+[2026-09-21T17:35:59.995+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/employee_delivery_pipeline.py for tasks to queue
+[2026-09-21T17:35:59.995+0000] {logging_mixin.py:154} INFO - [2026-09-21T17:35:59.995+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/employee_delivery_pipeline.py
+[2026-09-21T17:36:00.040+0000] {processor.py:839} INFO - DAG(s) dict_keys(['employee_delivery_pipeline']) retrieved from /opt/airflow/dags/employee_delivery_pipeline.py
+[2026-09-21T17:36:00.083+0000] {logging_mixin.py:154} INFO - [2026-09-21T17:36:00.083+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2026-09-21T17:36:00.106+0000] {logging_mixin.py:154} INFO - [2026-09-21T17:36:00.105+0000] {dag.py:3722} INFO - Setting next_dagrun for employee_delivery_pipeline to 2026-09-20T00:00:00+00:00, run_after=2026-09-21T00:00:00+00:00
+[2026-09-21T17:36:00.114+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/employee_delivery_pipeline.py took 0.124 seconds
+[2026-09-21T17:36:30.166+0000] {processor.py:157} INFO - Started process (PID=179) to work on /opt/airflow/dags/employee_delivery_pipeline.py
+[2026-09-21T17:36:30.167+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/employee_delivery_pipeline.py for tasks to queue
+[2026-09-21T17:36:30.167+0000] {logging_mixin.py:154} INFO - [2026-09-21T17:36:30.167+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/employee_delivery_pipeline.py
+[2026-09-21T17:36:30.182+0000] {processor.py:839} INFO - DAG(s) dict_keys(['employee_delivery_pipeline']) retrieved from /opt/airflow/dags/employee_delivery_pipeline.py
+[2026-09-21T17:36:30.204+0000] {logging_mixin.py:154} INFO - [2026-09-21T17:36:30.204+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2026-09-21T17:36:30.218+0000] {logging_mixin.py:154} INFO - [2026-09-21T17:36:30.218+0000] {dag.py:3722} INFO - Setting next_dagrun for employee_delivery_pipeline to 2026-09-20T00:00:00+00:00, run_after=2026-09-21T00:00:00+00:00
+[2026-09-21T17:36:30.230+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/employee_delivery_pipeline.py took 0.065 seconds
+[2026-09-21T17:37:00.314+0000] {processor.py:157} INFO - Started process (PID=184) to work on /opt/airflow/dags/employee_delivery_pipeline.py
+[2026-09-21T17:37:00.315+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/employee_delivery_pipeline.py for tasks to queue
+[2026-09-21T17:37:00.318+0000] {logging_mixin.py:154} INFO - [2026-09-21T17:37:00.316+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/employee_delivery_pipeline.py
+[2026-09-21T17:37:00.355+0000] {processor.py:839} INFO - DAG(s) dict_keys(['employee_delivery_pipeline']) retrieved from /opt/airflow/dags/employee_delivery_pipeline.py
+[2026-09-21T17:37:00.402+0000] {logging_mixin.py:154} INFO - [2026-09-21T17:37:00.402+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2026-09-21T17:37:00.473+0000] {logging_mixin.py:154} INFO - [2026-09-21T17:37:00.473+0000] {dag.py:3722} INFO - Setting next_dagrun for employee_delivery_pipeline to 2026-09-20T00:00:00+00:00, run_after=2026-09-21T00:00:00+00:00
+[2026-09-21T17:37:00.489+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/employee_delivery_pipeline.py took 0.181 seconds
+[2026-09-21T17:37:30.561+0000] {processor.py:157} INFO - Started process (PID=189) to work on /opt/airflow/dags/employee_delivery_pipeline.py
+[2026-09-21T17:37:30.562+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/employee_delivery_pipeline.py for tasks to queue
+[2026-09-21T17:37:30.566+0000] {logging_mixin.py:154} INFO - [2026-09-21T17:37:30.563+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/employee_delivery_pipeline.py
+[2026-09-21T17:37:30.600+0000] {processor.py:839} INFO - DAG(s) dict_keys(['employee_delivery_pipeline']) retrieved from /opt/airflow/dags/employee_delivery_pipeline.py
+[2026-09-21T17:37:30.627+0000] {logging_mixin.py:154} INFO - [2026-09-21T17:37:30.627+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2026-09-21T17:37:30.643+0000] {logging_mixin.py:154} INFO - [2026-09-21T17:37:30.643+0000] {dag.py:3722} INFO - Setting next_dagrun for employee_delivery_pipeline to 2026-09-20T00:00:00+00:00, run_after=2026-09-21T00:00:00+00:00
+[2026-09-21T17:37:30.654+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/employee_delivery_pipeline.py took 0.102 seconds
+[2026-09-21T17:38:00.907+0000] {processor.py:157} INFO - Started process (PID=194) to work on /opt/airflow/dags/employee_delivery_pipeline.py
+[2026-09-21T17:38:00.908+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/employee_delivery_pipeline.py for tasks to queue
+[2026-09-21T17:38:00.909+0000] {logging_mixin.py:154} INFO - [2026-09-21T17:38:00.909+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/employee_delivery_pipeline.py
+[2026-09-21T17:38:00.938+0000] {processor.py:839} INFO - DAG(s) dict_keys(['employee_delivery_pipeline']) retrieved from /opt/airflow/dags/employee_delivery_pipeline.py
+[2026-09-21T17:38:00.975+0000] {logging_mixin.py:154} INFO - [2026-09-21T17:38:00.975+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2026-09-21T17:38:00.997+0000] {logging_mixin.py:154} INFO - [2026-09-21T17:38:00.997+0000] {dag.py:3722} INFO - Setting next_dagrun for employee_delivery_pipeline to 2026-09-20T00:00:00+00:00, run_after=2026-09-21T00:00:00+00:00
+[2026-09-21T17:38:01.008+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/employee_delivery_pipeline.py took 0.104 seconds
+[2026-09-21T17:38:31.173+0000] {processor.py:157} INFO - Started process (PID=199) to work on /opt/airflow/dags/employee_delivery_pipeline.py
+[2026-09-21T17:38:31.174+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/employee_delivery_pipeline.py for tasks to queue
+[2026-09-21T17:38:31.175+0000] {logging_mixin.py:154} INFO - [2026-09-21T17:38:31.174+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/employee_delivery_pipeline.py
+[2026-09-21T17:38:31.207+0000] {processor.py:839} INFO - DAG(s) dict_keys(['employee_delivery_pipeline']) retrieved from /opt/airflow/dags/employee_delivery_pipeline.py
+[2026-09-21T17:38:31.233+0000] {logging_mixin.py:154} INFO - [2026-09-21T17:38:31.233+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2026-09-21T17:38:31.250+0000] {logging_mixin.py:154} INFO - [2026-09-21T17:38:31.250+0000] {dag.py:3722} INFO - Setting next_dagrun for employee_delivery_pipeline to 2026-09-20T00:00:00+00:00, run_after=2026-09-21T00:00:00+00:00
+[2026-09-21T17:38:31.258+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/employee_delivery_pipeline.py took 0.091 seconds
+[2026-09-21T17:39:01.428+0000] {processor.py:157} INFO - Started process (PID=204) to work on /opt/airflow/dags/employee_delivery_pipeline.py
+[2026-09-21T17:39:01.429+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/employee_delivery_pipeline.py for tasks to queue
+[2026-09-21T17:39:01.430+0000] {logging_mixin.py:154} INFO - [2026-09-21T17:39:01.429+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/employee_delivery_pipeline.py
+[2026-09-21T17:39:01.453+0000] {processor.py:839} INFO - DAG(s) dict_keys(['employee_delivery_pipeline']) retrieved from /opt/airflow/dags/employee_delivery_pipeline.py
+[2026-09-21T17:39:01.477+0000] {logging_mixin.py:154} INFO - [2026-09-21T17:39:01.477+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2026-09-21T17:39:01.491+0000] {logging_mixin.py:154} INFO - [2026-09-21T17:39:01.491+0000] {dag.py:3722} INFO - Setting next_dagrun for employee_delivery_pipeline to 2026-09-20T00:00:00+00:00, run_after=2026-09-21T00:00:00+00:00
+[2026-09-21T17:39:01.499+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/employee_delivery_pipeline.py took 0.075 seconds
+[2026-09-21T17:39:31.677+0000] {processor.py:157} INFO - Started process (PID=209) to work on /opt/airflow/dags/employee_delivery_pipeline.py
+[2026-09-21T17:39:31.678+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/employee_delivery_pipeline.py for tasks to queue
+[2026-09-21T17:39:31.679+0000] {logging_mixin.py:154} INFO - [2026-09-21T17:39:31.678+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/employee_delivery_pipeline.py
+[2026-09-21T17:39:31.692+0000] {processor.py:839} INFO - DAG(s) dict_keys(['employee_delivery_pipeline']) retrieved from /opt/airflow/dags/employee_delivery_pipeline.py
+[2026-09-21T17:39:31.711+0000] {logging_mixin.py:154} INFO - [2026-09-21T17:39:31.711+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2026-09-21T17:39:31.723+0000] {logging_mixin.py:154} INFO - [2026-09-21T17:39:31.723+0000] {dag.py:3722} INFO - Setting next_dagrun for employee_delivery_pipeline to 2026-09-20T00:00:00+00:00, run_after=2026-09-21T00:00:00+00:00
+[2026-09-21T17:39:31.729+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/employee_delivery_pipeline.py took 0.055 seconds
+[2026-09-21T17:40:01.876+0000] {processor.py:157} INFO - Started process (PID=221) to work on /opt/airflow/dags/employee_delivery_pipeline.py
+[2026-09-21T17:40:01.877+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/employee_delivery_pipeline.py for tasks to queue
+[2026-09-21T17:40:01.877+0000] {logging_mixin.py:154} INFO - [2026-09-21T17:40:01.877+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/employee_delivery_pipeline.py
+[2026-09-21T17:40:01.898+0000] {processor.py:839} INFO - DAG(s) dict_keys(['employee_delivery_pipeline']) retrieved from /opt/airflow/dags/employee_delivery_pipeline.py
+[2026-09-21T17:40:01.936+0000] {logging_mixin.py:154} INFO - [2026-09-21T17:40:01.936+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2026-09-21T17:40:01.950+0000] {logging_mixin.py:154} INFO - [2026-09-21T17:40:01.950+0000] {dag.py:3722} INFO - Setting next_dagrun for employee_delivery_pipeline to 2026-09-20T00:00:00+00:00, run_after=2026-09-21T00:00:00+00:00
+[2026-09-21T17:40:01.956+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/employee_delivery_pipeline.py took 0.084 seconds
+[2026-09-21T17:40:32.116+0000] {processor.py:157} INFO - Started process (PID=248) to work on /opt/airflow/dags/employee_delivery_pipeline.py
+[2026-09-21T17:40:32.116+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/employee_delivery_pipeline.py for tasks to queue
+[2026-09-21T17:40:32.117+0000] {logging_mixin.py:154} INFO - [2026-09-21T17:40:32.117+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/employee_delivery_pipeline.py
+[2026-09-21T17:40:32.130+0000] {processor.py:839} INFO - DAG(s) dict_keys(['employee_delivery_pipeline']) retrieved from /opt/airflow/dags/employee_delivery_pipeline.py
+[2026-09-21T17:40:32.150+0000] {logging_mixin.py:154} INFO - [2026-09-21T17:40:32.150+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2026-09-21T17:40:32.171+0000] {logging_mixin.py:154} INFO - [2026-09-21T17:40:32.170+0000] {dag.py:3722} INFO - Setting next_dagrun for employee_delivery_pipeline to 2026-09-21T00:00:00+00:00, run_after=2026-09-22T00:00:00+00:00
+[2026-09-21T17:40:32.181+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/employee_delivery_pipeline.py took 0.067 seconds
+[2026-09-21T17:41:02.343+0000] {processor.py:157} INFO - Started process (PID=253) to work on /opt/airflow/dags/employee_delivery_pipeline.py
+[2026-09-21T17:41:02.344+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/employee_delivery_pipeline.py for tasks to queue
+[2026-09-21T17:41:02.345+0000] {logging_mixin.py:154} INFO - [2026-09-21T17:41:02.344+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/employee_delivery_pipeline.py
+[2026-09-21T17:41:02.360+0000] {processor.py:839} INFO - DAG(s) dict_keys(['employee_delivery_pipeline']) retrieved from /opt/airflow/dags/employee_delivery_pipeline.py
+[2026-09-21T17:41:02.378+0000] {logging_mixin.py:154} INFO - [2026-09-21T17:41:02.378+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2026-09-21T17:41:02.389+0000] {logging_mixin.py:154} INFO - [2026-09-21T17:41:02.389+0000] {dag.py:3722} INFO - Setting next_dagrun for employee_delivery_pipeline to 2026-09-21T00:00:00+00:00, run_after=2026-09-22T00:00:00+00:00
+[2026-09-21T17:41:02.395+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/employee_delivery_pipeline.py took 0.056 seconds
+[2026-09-21T17:41:32.609+0000] {processor.py:157} INFO - Started process (PID=261) to work on /opt/airflow/dags/employee_delivery_pipeline.py
+[2026-09-21T17:41:32.610+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/employee_delivery_pipeline.py for tasks to queue
+[2026-09-21T17:41:32.611+0000] {logging_mixin.py:154} INFO - [2026-09-21T17:41:32.610+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/employee_delivery_pipeline.py
+[2026-09-21T17:41:32.629+0000] {processor.py:839} INFO - DAG(s) dict_keys(['employee_delivery_pipeline']) retrieved from /opt/airflow/dags/employee_delivery_pipeline.py
+[2026-09-21T17:41:32.647+0000] {logging_mixin.py:154} INFO - [2026-09-21T17:41:32.647+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2026-09-21T17:41:32.659+0000] {logging_mixin.py:154} INFO - [2026-09-21T17:41:32.659+0000] {dag.py:3722} INFO - Setting next_dagrun for employee_delivery_pipeline to 2026-09-21T00:00:00+00:00, run_after=2026-09-22T00:00:00+00:00
+[2026-09-21T17:41:32.667+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/employee_delivery_pipeline.py took 0.063 seconds
+[2026-09-21T17:42:02.736+0000] {processor.py:157} INFO - Started process (PID=266) to work on /opt/airflow/dags/employee_delivery_pipeline.py
+[2026-09-21T17:42:02.737+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/employee_delivery_pipeline.py for tasks to queue
+[2026-09-21T17:42:02.737+0000] {logging_mixin.py:154} INFO - [2026-09-21T17:42:02.737+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/employee_delivery_pipeline.py
+[2026-09-21T17:42:02.756+0000] {processor.py:839} INFO - DAG(s) dict_keys(['employee_delivery_pipeline']) retrieved from /opt/airflow/dags/employee_delivery_pipeline.py
+[2026-09-21T17:42:02.777+0000] {logging_mixin.py:154} INFO - [2026-09-21T17:42:02.777+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2026-09-21T17:42:02.797+0000] {logging_mixin.py:154} INFO - [2026-09-21T17:42:02.797+0000] {dag.py:3722} INFO - Setting next_dagrun for employee_delivery_pipeline to 2026-09-21T00:00:00+00:00, run_after=2026-09-22T00:00:00+00:00
+[2026-09-21T17:42:02.805+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/employee_delivery_pipeline.py took 0.073 seconds
+[2026-09-21T17:42:32.965+0000] {processor.py:157} INFO - Started process (PID=271) to work on /opt/airflow/dags/employee_delivery_pipeline.py
+[2026-09-21T17:42:32.966+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/employee_delivery_pipeline.py for tasks to queue
+[2026-09-21T17:42:32.967+0000] {logging_mixin.py:154} INFO - [2026-09-21T17:42:32.966+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/employee_delivery_pipeline.py
+[2026-09-21T17:42:32.978+0000] {processor.py:839} INFO - DAG(s) dict_keys(['employee_delivery_pipeline']) retrieved from /opt/airflow/dags/employee_delivery_pipeline.py
+[2026-09-21T17:42:32.999+0000] {logging_mixin.py:154} INFO - [2026-09-21T17:42:32.999+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2026-09-21T17:42:33.014+0000] {logging_mixin.py:154} INFO - [2026-09-21T17:42:33.014+0000] {dag.py:3722} INFO - Setting next_dagrun for employee_delivery_pipeline to 2026-09-21T00:00:00+00:00, run_after=2026-09-22T00:00:00+00:00
+[2026-09-21T17:42:33.022+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/employee_delivery_pipeline.py took 0.059 seconds
+[2026-09-21T17:43:03.190+0000] {processor.py:157} INFO - Started process (PID=276) to work on /opt/airflow/dags/employee_delivery_pipeline.py
+[2026-09-21T17:43:03.191+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/employee_delivery_pipeline.py for tasks to queue
+[2026-09-21T17:43:03.191+0000] {logging_mixin.py:154} INFO - [2026-09-21T17:43:03.191+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/employee_delivery_pipeline.py
+[2026-09-21T17:43:03.205+0000] {processor.py:839} INFO - DAG(s) dict_keys(['employee_delivery_pipeline']) retrieved from /opt/airflow/dags/employee_delivery_pipeline.py
+[2026-09-21T17:43:03.223+0000] {logging_mixin.py:154} INFO - [2026-09-21T17:43:03.223+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2026-09-21T17:43:03.234+0000] {logging_mixin.py:154} INFO - [2026-09-21T17:43:03.234+0000] {dag.py:3722} INFO - Setting next_dagrun for employee_delivery_pipeline to 2026-09-21T00:00:00+00:00, run_after=2026-09-22T00:00:00+00:00
+[2026-09-21T17:43:03.240+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/employee_delivery_pipeline.py took 0.053 seconds
+[2026-09-21T17:43:33.413+0000] {processor.py:157} INFO - Started process (PID=281) to work on /opt/airflow/dags/employee_delivery_pipeline.py
+[2026-09-21T17:43:33.414+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/employee_delivery_pipeline.py for tasks to queue
+[2026-09-21T17:43:33.414+0000] {logging_mixin.py:154} INFO - [2026-09-21T17:43:33.414+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/employee_delivery_pipeline.py
+[2026-09-21T17:43:33.434+0000] {processor.py:839} INFO - DAG(s) dict_keys(['employee_delivery_pipeline']) retrieved from /opt/airflow/dags/employee_delivery_pipeline.py
+[2026-09-21T17:43:33.463+0000] {logging_mixin.py:154} INFO - [2026-09-21T17:43:33.463+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2026-09-21T17:43:33.475+0000] {logging_mixin.py:154} INFO - [2026-09-21T17:43:33.475+0000] {dag.py:3722} INFO - Setting next_dagrun for employee_delivery_pipeline to 2026-09-21T00:00:00+00:00, run_after=2026-09-22T00:00:00+00:00
+[2026-09-21T17:43:33.483+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/employee_delivery_pipeline.py took 0.072 seconds
+[2026-09-21T17:44:03.632+0000] {processor.py:157} INFO - Started process (PID=286) to work on /opt/airflow/dags/employee_delivery_pipeline.py
+[2026-09-21T17:44:03.633+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/employee_delivery_pipeline.py for tasks to queue
+[2026-09-21T17:44:03.634+0000] {logging_mixin.py:154} INFO - [2026-09-21T17:44:03.633+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/employee_delivery_pipeline.py
+[2026-09-21T17:44:03.651+0000] {processor.py:839} INFO - DAG(s) dict_keys(['employee_delivery_pipeline']) retrieved from /opt/airflow/dags/employee_delivery_pipeline.py
+[2026-09-21T17:44:03.672+0000] {logging_mixin.py:154} INFO - [2026-09-21T17:44:03.671+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2026-09-21T17:44:03.684+0000] {logging_mixin.py:154} INFO - [2026-09-21T17:44:03.684+0000] {dag.py:3722} INFO - Setting next_dagrun for employee_delivery_pipeline to 2026-09-21T00:00:00+00:00, run_after=2026-09-22T00:00:00+00:00
+[2026-09-21T17:44:03.692+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/employee_delivery_pipeline.py took 0.064 seconds
+[2026-09-21T17:44:33.839+0000] {processor.py:157} INFO - Started process (PID=291) to work on /opt/airflow/dags/employee_delivery_pipeline.py
+[2026-09-21T17:44:33.839+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/employee_delivery_pipeline.py for tasks to queue
+[2026-09-21T17:44:33.840+0000] {logging_mixin.py:154} INFO - [2026-09-21T17:44:33.840+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/employee_delivery_pipeline.py
+[2026-09-21T17:44:33.860+0000] {processor.py:839} INFO - DAG(s) dict_keys(['employee_delivery_pipeline']) retrieved from /opt/airflow/dags/employee_delivery_pipeline.py
+[2026-09-21T17:44:33.886+0000] {logging_mixin.py:154} INFO - [2026-09-21T17:44:33.886+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2026-09-21T17:44:33.901+0000] {logging_mixin.py:154} INFO - [2026-09-21T17:44:33.901+0000] {dag.py:3722} INFO - Setting next_dagrun for employee_delivery_pipeline to 2026-09-21T00:00:00+00:00, run_after=2026-09-22T00:00:00+00:00
+[2026-09-21T17:44:33.925+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/employee_delivery_pipeline.py took 0.090 seconds
+[2026-09-21T17:45:04.020+0000] {processor.py:157} INFO - Started process (PID=297) to work on /opt/airflow/dags/employee_delivery_pipeline.py
+[2026-09-21T17:45:04.021+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/employee_delivery_pipeline.py for tasks to queue
+[2026-09-21T17:45:04.022+0000] {logging_mixin.py:154} INFO - [2026-09-21T17:45:04.022+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/employee_delivery_pipeline.py
+[2026-09-21T17:45:04.037+0000] {processor.py:839} INFO - DAG(s) dict_keys(['employee_delivery_pipeline']) retrieved from /opt/airflow/dags/employee_delivery_pipeline.py
+[2026-09-21T17:45:04.067+0000] {logging_mixin.py:154} INFO - [2026-09-21T17:45:04.067+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2026-09-21T17:45:04.087+0000] {logging_mixin.py:154} INFO - [2026-09-21T17:45:04.087+0000] {dag.py:3722} INFO - Setting next_dagrun for employee_delivery_pipeline to 2026-09-21T00:00:00+00:00, run_after=2026-09-22T00:00:00+00:00
+[2026-09-21T17:45:04.134+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/employee_delivery_pipeline.py took 0.116 seconds
