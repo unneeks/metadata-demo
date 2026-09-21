@@ -1,4 +1,4 @@
-openmetadata-ingestion[base]==1.5.0
-openmetadata-ingestion[mysql]==1.5.0
-openmetadata-ingestion[elasticsearch]==1.5.0
-requests
+pandas==2.1.1
+faker==19.11.0
+numpy==1.26.0
+pyarrow==14.0.1
