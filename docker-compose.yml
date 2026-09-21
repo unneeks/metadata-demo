@@ -128,6 +128,59 @@ services:
       - ${AIRFLOW_PROJ_DIR:-.}/neo4j/nodes:/var/lib/neo4j/import/nodes
       - ${AIRFLOW_PROJ_DIR:-.}/neo4j/relationships:/var/lib/neo4j/import/relationships
 
+  mysql:
+    image: openmetadata/db:1.4.0
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  opensearch:
+    image: opensearchproject/opensearch:2.7.0
+    environment:
+      - discovery.type=single-node
+      - OPENSEARCH_INITIAL_ADMIN_PASSWORD=adminAdmin123!
+    ports:
+      - "9200:9200"
+    volumes:
+      - opensearch_data:/usr/share/opensearch/data
+
+  openmetadata-server:
+    image: openmetadata/server:1.4.0
+    environment:
+      - DB_DRIVER_CLASS=com.mysql.cj.jdbc.Driver
+      - DB_SCHEME=mysql
+      - DB_USE_SSL=false
+      - DB_HOST=mysql
+      - DB_PORT=3306
+      - DB_USER=openmetadata_user
+      - DB_PASSWORD=openmetadata_password
+      - DB_NAME=openmetadata_db
+      - ELASTICSEARCH_HOST=opensearch
+      - ELASTICSEARCH_PORT=9200
+      - ELASTICSEARCH_SCHEME=http
+      - ELASTICSEARCH_KEEP_ALIVE_TIMEOUT_SECS=600
+    ports:
+      - "8585:8585"
+    depends_on:
+      - mysql
+      - opensearch
+
+  openmetadata-ingestion:
+    image: openmetadata/ingestion:1.4.0
+    environment:
+      - OM_SERVER_URL=http://openmetadata-server:8585/api
+    depends_on:
+      - openmetadata-server
+    command: tail -f /dev/null
+    volumes:
+      - ${AIRFLOW_PROJ_DIR:-.}/openmetadata:/openmetadata
+      - ${AIRFLOW_PROJ_DIR:-.}/scripts:/scripts
+
 volumes:
   minio_data:
   neo4j_data:
+  mysql_data:
+  opensearch_data:

@@ -1,0 +1,26 @@
+source:
+  type: trino
+  serviceName: trino_iceberg
+  serviceConnection:
+    config:
+      type: Trino
+      hostPort: trino:8080
+      username: admin
+      catalog: iceberg
+  sourceConfig:
+    config:
+      type: DatabaseMetadata
+      markDeletedTables: true
+      includeTables: true
+      includeViews: true
+
+sink:
+  type: metadata-rest
+  config: {}
+
+workflowConfig:
+  openMetadataServerConfig:
+    hostPort: http://openmetadata-server:8585/api
+    authProvider: openmetadata
+    securityConfig:
+      jwtToken: ""
