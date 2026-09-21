@@ -152,14 +152,15 @@ services:
       - mysql_data:/var/lib/mysql
 
   opensearch:
-    image: opensearchproject/opensearch:2.7.0
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.17.10
     environment:
       - discovery.type=single-node
-      - OPENSEARCH_INITIAL_ADMIN_PASSWORD=adminAdmin123!
+      - xpack.security.enabled=false
+      - ES_JAVA_OPTS=-Xms512m -Xmx512m
     ports:
       - "9200:9200"
     volumes:
-      - opensearch_data:/usr/share/opensearch/data
+      - elasticsearch_data:/usr/share/elasticsearch/data
 
   openmetadata-server:
     image: openmetadata/server:1.4.0
@@ -198,3 +199,4 @@ volumes:
   neo4j_data:
   mysql_data:
   opensearch_data:
+  elasticsearch_data:

@@ -38,7 +38,7 @@ def bootstrap():
     db_service = requests.post(f"{SERVER_URL}/services/databaseServices", headers=headers, json={
         "name": "data_lake",
         "serviceType": "Iceberg",
-        "connection": {"config": {"type": "Iceberg"}}
+        "connection": {"config": {"type": "Iceberg", "catalog": {"name": "dummy"}}}
     }).json()
     
     db = requests.post(f"{SERVER_URL}/databases", headers=headers, json={
@@ -58,6 +58,7 @@ def bootstrap():
             {
                 "name": "employee_id",
                 "dataType": "VARCHAR",
+                "dataLength": 255,
                 "description": "Unique identifier for the employee"
             },
             {
