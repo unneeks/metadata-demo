@@ -5,3 +5,4 @@ __pycache__/
 docker/data/
 docker/logs/
 docker/.env
+.venv/
